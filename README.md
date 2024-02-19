@@ -1,15 +1,11 @@
 <p align="center">
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
-![image](https://github.com/ChelseaReeves/osticket-prereqs/assets/152749606/894441af-818a-4f69-b68e-4009317f853c)
+
 
 <h1>osTicket - Prerequisites and Installation</h1>
 This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
 
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How To Install osTicket with Prerequisites](https://www.youtube.com)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -31,28 +27,155 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - HeidiSQL
 
 <h2>Installation Steps</h2>
+<p>
+I'm currently on portal.azure.com, where I've established a resource group. Upon completion, I proceed to create a Virtual Machine running Windows 10, configured with 4 virtual CPUs.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/IAQwOJX.png" height="60%" width="60%" />
+</p>
+<p align="center">
+<img src="https://i.imgur.com/huiTMpp.png" height="60%" width="60%" />
+</p>
 
 <p>
-<![image](https://github.com/ChelseaReeves/osticket-prereqs/assets/152749606/1bf1c31d-5eaa-4f8b-b3ca-91bfd6ca626f)>
-
+Once that is done, I am using the public IP address and connecting it to the remote desktop. In the control menu, I clicked on the icon that says uninstall a program and selected turn windows features on and off.
+<p>
+I have selected Install/Enable IIS folder in windows and activated CGI and Common HTTP Features
+<p>
+-	World Wide Web Services -> Application Development Features ->[X]CGI [X]Common HTTP Features
+<p>
+  Next, I have selected the IIS Management Console folder.
+  <p>
+-	Internet Information Services -> Web Management Tools -> IIS Management Console [X]IIS Management Console
+</p>
+<p align="center">
+<img src="https://i.imgur.com/72GXbfW.png" height="40%" width="40%" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I am checking to see if IIS is installed in the web browser and searched 127.0.0.1.
 </p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p align="center">
+<img src="https://i.imgur.com/0ej018Y.png" height="60%" width="60%" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I have downloaded and installed the PHP Manager for IIS.
 </p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p align="center">
+<img src="https://i.imgur.com/wa9XJqG.png" height="60%" width="60%" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I have downloaded and installed the Rewrite Module
 </p>
-<br />
+<p align="center">
+<img src="https://i.imgur.com/G8kT9O7.png" height="60%" width="60%" />
+</p>
+<p>
+I have downloaded and installed PHP 7.3.8 and unzipped the contents into C:\PHP
+</p>
+<p align="center">
+<img src="https://i.imgur.com/emVJjwM.png" height="60%" width="60%" />
+</p>
+<p>
+Next I have downloaded and installed VC_redist.x86.exe
+</p>
+<p align="center">
+<img src="https://i.imgur.com/szePMjd.png" height="60%" width="60%" />
+</p>
+<p>
+I have downloaded and installed MySQL 5.5.62 and in the following screens I have selected Typical Setup.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/oBXmDrQ.png" height="60%" width="60%" />
+</p>
+<p>
+In the next screen I have selected Launched Configuration Wizard, the next screen Standard Configuration and made a new root password.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/hlOM7ha.png" height="60%" width="60%" />
+</p>
+<p>
+I have opened IIS as an Admin and selected PHP Manager.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/tV3F8Rr.png" height="60%" width="60%" />
+</p>
+<p>
+I have registered PHP within IIS and provided a path for the PHP executable file. Once I am in C:\, I am now selecting PHP and clicked on php-cgi file.  
+</p>
+<p align="center">
+<img src="https://i.imgur.com/hgzzhRi.png" height="60%" width="60%" />
+</p>
+<p>
+I have reload IIS and installed osTicket v1.15.8. I have extracted and copied the ‘upload’ folder to c:\inetpub\wwwroot. In the same folder, I have renamed ‘upload’ to ‘osTicket’ 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/G1bFu8j.png" height="60%" width="60%" />
+</p>
+<p align="center">
+<img src="https://i.imgur.com/ExlF4dE.png" height="60%" width="60%" />
+</p>
+<p>
+I have reloaded IIS again and on the left side I have clicked sites -> Default -> osTIcket. On the right side, I have clicked ‘Browse *.80’.
+It has lead to the osTicket installer page and it shows that not all extension are enabled.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/ywcaFsZ.png" height="60%" width="60%" />
+</p>
+<p>
+I have went back to IIS, clicked sites -> Default -> osTicket. I have doubled click PHP manager, clicked ‘Enable or disable an extension’
+In the next screen that is labeled ‘enable or disable an extension’. I have enabled -> php_imap.dll, php_intl.dll, and php_opcache.dll.
+I have reloaded the osTicket installer page and observed the new changes.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/MPFC0rL.png" height="60%" width="60%" />
+</p>
+<p align="center">
+<img src="https://i.imgur.com/Qsz2nIC.png" height="60%" width="60%" />
+</p>
+<p>
+In the osTicket folder, I have rename ost-sampleconfig.php to ost-config.php. 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/r3xORfL.png" height="60%" width="60%" />
+</p>
+<p>
+Once the file has been renamed, I have right click on the file and selected properties. I have clicked security, clicked on advance and disabled inheritance and selected remove all. Next I clicked new permissions -> everyone -> all.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/4bMoDkS.png" height="40%" width="40%" />
+</p>
+<p>
+I have continued to setup osTicket in the browser. I have now clicked ‘continue’ on the osTicket browser page. I have filled out the page and continue to install more programs to set the final requirements for osTicket.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/R1jXSso.png" height="60%" width="60%" />
+</p>
+<p>
+I have downloaded and installed HeidiSQL 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/R6Tk5an.png" height="60%" width="60%" />
+</p>
+<p>
+In HeidiSQL, I have right click on the left side that says ‘Unnamed’, select ‘create new’, and selected ‘database’. I have named the new database osTicket. Once the new database is set, I have went back to the browser for the osTicket page and finished the MySQL database info.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/T552pjD.png" height="60%" width="60%" />
+</p>
+<p>
+The final steps for osTicket in the browser
+•	MySQL Database: osTicket
+•	MySQL Username: root
+•	MySQL Password: Password1
+•	Click ‘Install Now!’
+Once everything is installed, in the next screen it will give a congratulations page.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/siezGtX.png" height="60%" width="60%" />
+</p>
+<p>
+The last step is to clean up, I have deleted the setup folder, set the permissions back to ‘Read’ in ost-config.php file, and browsed to the help desk login page: http://localhost/osTicket/scp/login.php. The login page has successfully been loaded.
+</p>
+<p align="center">
+<img src="https://i.imgur.com/swLbMQA.png" height="40%" width="40%" />
+</p>
