@@ -162,12 +162,14 @@ In HeidiSQL, I have right click on the left side that says ‘Unnamed’, select
 <p align="center">
 <img src="https://i.imgur.com/T552pjD.png" height="60%" width="60%" />
 </p>
+<h2>The final steps for osTicket in the browser</h2>
+
+-	MySQL Database: osTicket
+-	MySQL Username: root
+-	MySQL Password: Password1
+-	Click ‘Install Now!’
+  
 <p>
-The final steps for osTicket in the browser
-•	MySQL Database: osTicket
-•	MySQL Username: root
-•	MySQL Password: Password1
-•	Click ‘Install Now!’
 Once everything is installed, in the next screen it will give a congratulations page.
 </p>
 <p align="center">
@@ -179,3 +181,6 @@ The last step is to clean up, I have deleted the setup folder, set the permissio
 <p align="center">
 <img src="https://i.imgur.com/swLbMQA.png" height="40%" width="40%" />
 </p>
+<p>
+Thanks for dropping by!
+</>
